@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS Chandan | Custom Designer</title>
+    <meta name="description"
+        content="I design high-converting visuals that turn attention into revenue. Helping brands, creators, and businesses grow through strategic design, high-CTR thumbnails, and powerful visual storytelling.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Custom Cursor & Ambient Glow -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">CS<span class="text-accent">.</span></a>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skill">Skills</a>
+                <a href="#services">Services</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <a href="letswork.html" class="btn btn-nav">Let's Work</a>
+            <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                <i class="ph ph-list"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-grid-overlay"></div>
+        <div class="hero-glow"></div>
+        <div class="container hero-content">
+            <div class="hero-left">
+                <div class="hero-badge reveal" id="heroBadge">
+                    <span class="pulse-dot-green"></span>
+                    Available for Freelance
+                </div>
+                <h1 class="hero-title reveal delay-1">
+                    <span class="title-line tl1">I'm <span class="text-accent gradient-text">CS Chandan</span></span>
+                    <span class="title-line tl2">Creative</span>
+                    <span class="title-line tl3"><span class="typed-text" id="typedText"></span><span
+                            class="typed-cursor">|</span></span>
+                </h1>
+                <p class="hero-subtitle reveal delay-2">
+                    I design high-converting visuals that turn attention into revenue. Helping brands, creators, and businesses grow through strategic design, high-CTR thumbnails, and powerful visual storytelling.
+                </p>
+                <p class="hero-subtitle reveal delay-2">I analyze your product, pinpoint the exact friction costing you sales, and design scroll-stopping thumb-focused creatives that convert viewers into buyers.</p>
+                <div class="hero-cta reveal delay-3">
+                    <a href="#portfolio" class="btn btn-primary">View Case Studies <i class="ph-fill ph-arrow-right"></i></a>
+                    <a href="letswork.html" class="btn btn-secondary">Book a Call <i class="ph-fill ph-calendar"></i></a>
+                </div>
+            </div>
+
+            <div class="hero-right reveal delay-2">
+                <div class="hero-image-wrapper glass-panel">
+                    <div class="hero-image-bg"></div>
+                    <img src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="CS Chandan" class="hero-img">
+                </div>
+            </div>
+
+            <div class="hero-scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <span>Scroll to explore</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust / Brands Section -->
+    <section class="brands" id="brands">
+        <div class="container">
+            <p class="brands-title reveal">Trusted by 6+ Brands & Creators</p>
+            <div class="brands-track reveal delay-1">
+                <a href="https://learnwhatmatters.in/" target="_blank" rel="noopener" class="brand-badge glass-badge"><img src="https://ui-avatars.com/api/?name=L+M&background=111&color=fff&rounded=true&size=32" alt="LWM"> Learn What Matters</a>
+                <a href="https://thedailysadhana.com/" target="_blank" rel="noopener" class="brand-badge glass-badge"><img src="https://ui-avatars.com/api/?name=T+D&background=111&color=fff&rounded=true&size=32" alt="TDS"> The Daily Sadhana</a>
+                <a href="https://thedevotionist.com/" target="_blank" rel="noopener" class="brand-badge glass-badge"><img src="https://ui-avatars.com/api/?name=T+D&background=111&color=fff&rounded=true&size=32" alt="TD"> The Devotionist</a>
+                <a href="https://healingwithgrace.co/" target="_blank" rel="noopener" class="brand-badge glass-badge"><img src="https://ui-avatars.com/api/?name=H+W&background=111&color=fff&rounded=true&size=32" alt="HWG"> Healing With Grace</a>
+                <a href="https://sanatanstories.in/" target="_blank" rel="noopener" class="brand-badge glass-badge"><img src="https://ui-avatars.com/api/?name=S+S&background=111&color=fff&rounded=true&size=32" alt="SS"> Sanatan Stories</a>
+                <a href="https://bloomingpairs.com/" target="_blank" rel="noopener" class="brand-badge glass-badge"><img src="https://ui-avatars.com/api/?name=B+P&background=111&color=fff&rounded=true&size=32" alt="BP"> Blooming Pairs</a>
+                <a href="https://trulyprintables.com/" target="_blank" rel="noopener" class="brand-badge glass-badge"><img src="https://ui-avatars.com/api/?name=T+P&background=111&color=fff&rounded=true&size=32" alt="TP"> Truly Printables</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image reveal glass-panel">
+                    <div class="about-img-bg"></div>
+                    <!-- Added a realistic placeholder for the user's portrait -->
+                    <img src="https://images.unsplash.com/photo-1542261777448-23d2a287091c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="CS Chandan Portrait" class="about-img">
+                </div>
+
+                <div class="about-text reveal delay-1">
+                    <h2 class="section-title">Beyond Just <br><span class="text-accent">Aesthetics.</span></h2>
+                    <p class="about-desc">
+                        I'm CS Chandan, a graphic designer with 1+ years of experience working with multiple brands and creators. I specialize in creating visuals that not only look good but <strong>drive engagement, clicks, and conversions.</strong>
+                    </p>
+                    <p class="about-desc">
+                        From YouTube thumbnails to brand creatives, my focus is always on results &mdash; not just design.
+                    </p>
+                    <div class="stats delay-2 glass-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">6+</span>
+                            <span class="stat-label">Brands Grown</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100+</span>
+                            <span class="stat-label">Creatives Delivered</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">1+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skill">
+        <div class="container reveal">
+            <h3 class="skills-title text-center section-title">My <span class="text-accent">Toolkit.</span></h3>
+            <div class="skills-grid">
+                <div class="skill-card glass-card">
+                    <div class="icon-brand"><i class="fa-brands fa-adobe" style="color:#31a8ff; text-shadow: 0 0 20px rgba(49,168,255,0.6);"></i></div>
+                    <h4>Adobe Photoshop</h4>
+                    <p>Advanced composition & retouching for high-CTR visuals.</p>
+                </div>
+                <div class="skill-card glass-card">
+                    <div class="icon-brand"><i class="fa-brands fa-adobe" style="color:#ff9a00; text-shadow: 0 0 20px rgba(255,154,0,0.6);"></i></div>
+                    <h4>Adobe Illustrator</h4>
+                    <p>Precision vector graphics and clean logo identities.</p>
+                </div>
+                <div class="skill-card glass-card">
+                    <div class="icon-brand"><i class="fa-brands fa-adobe" style="color:#ff3366; text-shadow: 0 0 20px rgba(255,51,102,0.6);"></i></div>
+                    <h4>Adobe InDesign</h4>
+                    <p>Professional layout design and print-ready deliverables.</p>
+                </div>
+                <div class="skill-card glass-card">
+                    <div class="icon-brand"><img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Canva_icon_2021.svg" style="width: 40px; filter: drop-shadow(0 0 10px rgba(0, 196, 204, 0.5));" alt="Canva"></div>
+                    <h4>Canva Pro</h4>
+                    <p>Rapid, high-quality social media template systems.</p>
+                </div>
+                <div class="skill-card glass-card">
+                    <div class="icon-brand"><i class="ph-fill ph-video-camera" style="color:#9999ff; text-shadow: 0 0 20px rgba(153,153,255,0.6);"></i></div>
+                    <h4>Video Editing Pro</h4>
+                    <p>Dynamic cuts & visual pacing to retain massive viewer attention.</p>
+                </div>
+                <div class="skill-card glass-card">
+                    <div class="icon-brand"><i class="ph-fill ph-robot" style="color:#00ffcc; text-shadow: 0 0 20px rgba(0,255,204,0.6);"></i></div>
+                    <h4>AI Generation</h4>
+                    <p>Leveraging generative AI for rapid ideation and unique assets.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline Section -->
+    <section class="section experience" id="experience">
+        <div class="container">
+            <div class="section-header text-center reveal">
+                <span class="section-tag text-accent">MY JOURNEY</span>
+                <h2 class="section-title">Education & <span class="gradient-text text-accent">Experience</span></h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item reveal delay-1">
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-badge text-accent">Experience</div>
+                        <h3>Freelance Graphic Designer</h3>
+                        <span class="timeline-date">2024 &mdash; Present</span>
+                        <p>Working with diverse clients to create impactful ad creatives, banners,
+                            and brand visuals. Delivering pixel-perfect designs that drive engagement
+                            and conversions across digital platforms.</p>
+                        <div class="timeline-tags">
+                            <span>Ad Creatives</span>
+                            <span>Banners</span>
+                            <span>Brand Design</span>
+                            <span>Social Media</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal delay-2">
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-badge text-muted">Education</div>
+                        <h3>Class 12th &mdash; Arts Stream</h3>
+                        <span class="timeline-date">Completed</span>
+                        <p>Completed senior secondary education with a focus on Arts,
+                            building a strong foundation in visual aesthetics, creativity,
+                            and artistic expression that fuels my design career.</p>
+                        <div class="timeline-tags">
+                            <span>Arts</span>
+                            <span>Visual Studies</span>
+                            <span>Creative Foundation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal delay-3">
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-badge text-muted">Self Learning</div>
+                        <h3>Design Skill Development</h3>
+                        <span class="timeline-date">Ongoing</span>
+                        <p>Continuously upgrading skills through YouTube resources, tutorials,
+                            and hands-on practice in graphic design, typography, color theory,
+                            and modern design tools.</p>
+                        <div class="timeline-tags">
+                            <span>YouTube Resources</span>
+                            <span>Practice</span>
+                            <span>Design Trends</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header text-center reveal">
+                <h2 class="section-title">Solutions Built <br>For <span class="text-accent">Growth.</span></h2>
+                <p class="section-subtitle">Stop losing potential revenue to bad design. I build visual assets engineered to convert.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card glass-card reveal">
+                    <div class="service-icon-wrapper">
+                        <i class="ph-fill ph-youtube-logo text-accent"></i>
+                    </div>
+                    <h3>Thumbnail Design</h3>
+                    <div class="problem-solution">
+                        <p class="problem"><span>Problem:</span> Low click-through rates killing your channel.</p>
+                        <p class="solution"><span>Solution:</span> I create scroll-stopping thumbnails based on psychology that increase CTR and drive massive views.</p>
+                    </div>
+                </div>
+
+                <div class="service-card glass-card reveal delay-1">
+                    <div class="service-icon-wrapper">
+                        <i class="ph-fill ph-device-mobile text-accent"></i>
+                    </div>
+                    <h3>Social Media Design</h3>
+                    <div class="problem-solution">
+                        <p class="problem"><span>Problem:</span> Followers aren't engaging or converting to buyers.</p>
+                        <p class="solution"><span>Solution:</span> Strategic, thumb-stopping creatives designed to boost engagement, build trust, and establish brand authority.</p>
+                    </div>
+                </div>
+
+                <div class="service-card glass-card reveal delay-2">
+                    <div class="service-icon-wrapper">
+                        <i class="ph-fill ph-polygon text-accent"></i>
+                    </div>
+                    <h3>Logo Design</h3>
+                    <div class="problem-solution">
+                        <p class="problem"><span>Problem:</span> A generic logo makes your business look cheap and forgettable.</p>
+                        <p class="solution"><span>Solution:</span> Clean, modern, scalable identities that make your premium brand instantly recognizable.</p>
+                    </div>
+                </div>
+
+                <div class="service-card glass-card reveal delay-3">
+                    <div class="service-icon-wrapper">
+                        <i class="ph-fill ph-monitor-play text-accent"></i>
+                    </div>
+                    <h3>YouTube Branding</h3>
+                    <div class="problem-solution">
+                        <p class="problem"><span>Problem:</span> Inconsistent channel visuals damage viewer trust.</p>
+                        <p class="solution"><span>Solution:</span> Complete, cohesive visual systems (banners, avatars, overlays) to grow your channel faster and look professional.</p>
+                    </div>
+                </div>
+
+                <div class="service-card glass-card reveal delay-2">
+                    <div class="service-icon-wrapper">
+                        <i class="ph-fill ph-video-camera text-accent"></i>
+                    </div>
+                    <h3>Video Editing</h3>
+                    <div class="problem-solution">
+                        <p class="problem"><span>Problem:</span> Boring cuts making viewers drop off early.</p>
+                        <p class="solution"><span>Solution:</span> Engaging pacing, dynamic motion graphics, and clean cuts to massively boost viewer retention.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-header text-center reveal">
+                <h2 class="section-title">Selected <span class="text-accent">Works.</span></h2>
+                <p class="section-subtitle">Real results for real clients.</p>
+            </div>
+
+            <div class="portfolio-filters reveal delay-1">
+                <button class="filter-btn active" data-filter="all">All Works</button>
+                <button class="filter-btn" data-filter="thumbnails">Thumbnails</button>
+                <button class="filter-btn" data-filter="reels">Short Reels</button>
+                <button class="filter-btn" data-filter="longvideo">Long Videos</button>
+                <button class="filter-btn" data-filter="cover">Cover Pages</button>
+                <button class="filter-btn" data-filter="listing">Listing Images</button>
+                <button class="filter-btn" data-filter="banner">Banners</button>
+                <button class="filter-btn" data-filter="book">Book Design</button>
+            </div>
+
+            <div class="portfolio-grid reveal delay-2">
+                <!-- Short Reel Placeholder -->
+                <div class="portfolio-item mix reels glass-card" data-cat="reels">
+                    <div class="portfolio-img-container">
+                        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Short Reel Edit" class="portfolio-img">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Viral Short Reel</h3>
+                        <div class="case-study">
+                            <div class="cs-item"><span class="cs-label lbl-prob">Problem:</span> Low retention drop-off in first 3 seconds.</div>
+                            <div class="cs-item"><span class="cs-label lbl-goal">Goal:</span> Hook viewers and increase watch time.</div>
+                            <div class="cs-item"><span class="cs-label lbl-sol">Solution:</span> Fast-paced B-roll with high-contrast animated captions.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Long Video Placeholder -->
+                <div class="portfolio-item mix longvideo glass-card" data-cat="longvideo">
+                    <div class="portfolio-img-container">
+                        <img src="https://images.unsplash.com/photo-1574717024453-354056aaddfa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Long Video Edit" class="portfolio-img">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Software Product Ad</h3>
+                        <div class="case-study">
+                            <div class="cs-item"><span class="cs-label lbl-prob">Problem:</span> Boring static tech product image causing low CTR.</div>
+                            <div class="cs-item"><span class="cs-label lbl-goal">Goal:</span> Drive software downloads via paid ads.</div>
+                            <div class="cs-item"><span class="cs-label lbl-sol">Solution:</span> Created an energetic video ad highlighting UI features.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cover Page Placeholder -->
+                <div class="portfolio-item mix cover glass-card" data-cat="cover">
+                    <div class="portfolio-img-container">
+                        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Book/Course Cover Page" class="portfolio-img">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Podcast Cover Art</h3>
+                        <div class="case-study">
+                            <div class="cs-item"><span class="cs-label lbl-prob">Problem:</span> Cover looked generic and blended in on Spotify.</div>
+                            <div class="cs-item"><span class="cs-label lbl-goal">Goal:</span> Stand out visually and attract new clicks.</div>
+                            <div class="cs-item"><span class="cs-label lbl-sol">Solution:</span> Bold typography with neon glassmorphism layout.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Banner Placeholder -->
+                <div class="portfolio-item mix banner glass-card" data-cat="banner">
+                    <div class="portfolio-img-container">
+                        <img src="https://images.unsplash.com/photo-1557053910-d9eadeed1c58?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Website Banner Design" class="portfolio-img">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>E-Com Checkout Banner</h3>
+                        <div class="case-study">
+                            <div class="cs-item"><span class="cs-label lbl-prob">Problem:</span> High cart abandonment on Shopify store.</div>
+                            <div class="cs-item"><span class="cs-label lbl-goal">Goal:</span> Re-target users with a compelling visual layout.</div>
+                            <div class="cs-item"><span class="cs-label lbl-sol">Solution:</span> Converted product features into a premium trusted banner.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item mix thumbnails glass-card" data-cat="thumbnails">
+                    <div class="portfolio-img-container">
+                        <img src="https://images.unsplash.com/photo-1616469829581-73993eb86b02?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Finance Mastery Thumbnail" class="portfolio-img">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>YouTube Clickbait Thumb</h3>
+                        <div class="case-study">
+                            <div class="cs-item"><span class="cs-label lbl-prob">Problem:</span> Channel was stuck at 2% Click-Through Rate.</div>
+                            <div class="cs-item"><span class="cs-label lbl-goal">Goal:</span> Spike CTR to double digital views.</div>
+                            <div class="cs-item"><span class="cs-label lbl-sol">Solution:</span> Bright contrast edits with a highly emotive face focus.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item mix social glass-card" data-cat="social">
+                    <div class="portfolio-img-container">
+                        <img src="https://images.unsplash.com/photo-1493612276216-ee3925520721?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="D2C Product Ad Creative" class="portfolio-img">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>D2C Product Ad Creative</h3>
+                        <p>Problem: High CPA. Solution: Minimal layout focusing on product dropped CPA by 40%.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item mix branding glass-card" data-cat="branding">
+                    <div class="portfolio-img-container">
+                        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Tech Startup Identity" class="portfolio-img">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Tech Startup Identity</h3>
+                        <p>Problem: Generic look. Solution: Clean geometric mark standing out in SaaS.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item mix print glass-card" data-cat="print">
+                    <div class="portfolio-img-container">
+                        <img src="https://images.unsplash.com/photo-1589333333796-03180d7c7126?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="CEO Matte Black Cards" class="portfolio-img">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>CEO Matte Black Cards</h3>
+                        <p>Problem: Forgettable networking. Solution: Heavyweight matte black with foil typography.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item mix book glass-card" data-cat="book">
+                    <div class="portfolio-img-container">
+                        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Book Design Project" class="portfolio-img">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Premium Book Design</h3>
+                        <p>Complete layout and cover design for high-revenue authors.</p>
+                        <a href="#" class="btn btn-outline" style="border-radius: 100px; padding: 8px 20px; font-size: 0.9rem; margin-top: 15px; display: inline-block;">View Live Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="reviews">
+        <div class="container">
+            <h2 class="section-title text-center reveal">Client <span class="text-accent">Success.</span></h2>
+            
+            <div class="testimonial-wrapper reveal delay-1">
+                <div class="testimonial-grid" id="testimonialStack">
+                    <!-- Review 1 -->
+                    <div class="testimonial-card glass-card">
+                        <div class="stars">
+                            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                        </div>
+                        <p class="quote">"Chandan's ad creatives completely transformed our ROAS. He understands exactly what makes people stop scrolling and click. Highly recommended!"</p>
+                        <div class="client-info">
+                            <div class="client-avatar">RJ</div>
+                            <div>
+                                <h4>Rahul J.</h4>
+                                <span>Founder, Learn What Matters</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Review 2 -->
+                    <div class="testimonial-card glass-card">
+                        <div class="stars">
+                            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph ph-star"></i>
+                        </div>
+                        <p class="quote">"The thumbnails he designed doubled our channel's CTR in literally one week. His grasp on viewer psychology is unmatched."</p>
+                        <div class="client-info">
+                            <div class="client-avatar">DS</div>
+                            <div>
+                                <h4>Deepak S.</h4>
+                                <span>The Daily Sadhana</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Review 3 -->
+                    <div class="testimonial-card glass-card">
+                        <div class="stars">
+                            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                        </div>
+                        <p class="quote">"We needed premium branding that felt expensive. Chandan delivered a visual identity that allowed us to instantly raise our prices."</p>
+                        <div class="client-info">
+                            <div class="client-avatar">HG</div>
+                            <div>
+                                <h4>Harsh G.</h4>
+                                <span>CEO, Healing With Grace</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- BOOK A CALL SECTION -->
+    <!-- Booking & Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info reveal">
+                    <h2 class="section-title">Let's Build Something <br><span class="text-accent">That Stands
+                            Out.</span></h2>
+                    <p class="contact-subtitle">If you're serious about growing your brand, let's work together.</p>
+
+                    <div class="contact-methods">
+                        <a href="mailto:csdesignz07@gmail.com" class="method-card glass-card">
+                            <i class="ph-fill ph-envelope-simple text-accent"></i>
+                            <div>
+                                <p class="method-title">Email Me</p>
+                                <p class="method-value">csdesignz07@gmail.com</p>
+                            </div>
+                        </a>
+                        <a href="https://wa.me/916209408646" target="_blank" rel="noopener" class="method-card glass-card">
+                            <i class="ph-fill ph-whatsapp-logo text-accent"></i>
+                            <div>
+                                <p class="method-title">WhatsApp</p>
+                                <p class="method-value">+91 6209408646</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="social-links-big">
+                        <a href="https://instagram.com/cschandan.designz" target="_blank" rel="noopener"
+                            aria-label="Instagram" class="glass-card">
+                            <i class="ph-fill ph-instagram-logo"></i>
+                        </a>
+                        <a href="https://behance.net/chandanpandit16" target="_blank" rel="noopener"
+                            aria-label="Behance" class="glass-card">
+                            <i class="ph-fill ph-behance-logo"></i>
+                        </a>
+                        <a href="https://wa.me/916209408646" target="_blank" rel="noopener" aria-label="WhatsApp" class="glass-card">
+                            <i class="ph-fill ph-whatsapp-logo"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Side: Booking Card -->
+                <div class="contact-form-wrapper reveal delay-1">
+                    <div class="glass-card meet-card" style="padding: 50px; text-align: center; display: flex; flex-direction: column; gap: 30px; align-items: center; justify-content: center;">
+                        <div style="font-size: 4rem; color: var(--accent-color); text-shadow: 0 0 20px var(--accent-glow);">
+                            <i class="ph-fill ph-calendar-check"></i>
+                        </div>
+                        <h3 style="font-family: var(--font-heading); font-size: 2rem;">Let's Talk Strategy</h3>
+                        <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6; max-width: 400px; margin: 0 auto;">
+                            Ready to transform your brand? Click below to pick a time on my calendar. <strong>Please include your project details</strong> so I can prepare before our meeting!
+                        </p>
+                        <!-- Using Calendly or generic meeting link -->
+                        <a href="https://calendly.com/csdesignz07" target="_blank" class="btn btn-secondary" data-navigate="meeting" style="font-size: 1.2rem; padding: 18px 40px; border-radius: 100px;">
+                            Book a Meeting <i class="ph-bold ph-calendar-plus"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <a href="#" class="logo">CS<span class="text-accent">.</span></a>
+                <p>&copy; 2026 CS Chandan.<br>Helping brands scale with high-converting<br>premium design solutions.</p>
+                <p style="margin-top: 15px; font-size: 0.9rem; color: var(--text-muted); display: flex; align-items: center; gap: 5px;">
+                    Designed with <i class="ph-fill ph-heart" style="color: #ff3366;"></i> by CS Chandan
+                </p>
+            </div>
+            <div class="footer-links">
+                <p class="footer-title">Navigation</p>
+                <div class="footer-nav">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#skill">Skills</a>
+                    <a href="#services">Services</a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <p class="footer-title">Connect</p>
+                <div class="footer-nav">
+                    <a href="#portfolio">View Works</a>
+                    <a href="letswork.html">Let's Work</a>
+                    <a href="https://instagram.com/cschandan.designz" target="_blank">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+
+</html>

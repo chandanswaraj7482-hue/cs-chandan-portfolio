@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's Work | CS Chandan</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .form-page-wrapper {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 5%;
+            position: relative;
+        }
+        .form-page-card {
+            max-width: 800px;
+            width: 100%;
+            padding: 60px;
+            position: relative;
+            z-index: 10;
+        }
+        .back-btn {
+            position: absolute;
+            top: 40px;
+            left: 5%;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 1.1rem;
+            z-index: 100;
+            transition: color 0.3s;
+        }
+        .back-btn:hover {
+            color: var(--accent-color);
+        }
+        .form-page-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .form-page-title h1 {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+        .form-page-title p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+        @media (max-width: 768px) {
+            .form-page-card { padding: 40px 20px; }
+            .form-page-title h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+    <div class="cursor-glow" data-cursor-glow></div>
+
+    <div class="hero-grid-overlay"></div>
+    <div class="hero-glow"></div>
+
+    <a href="index.html" class="back-btn"><i class="ph ph-arrow-left"></i> Back to Portfolio</a>
+
+    <div class="form-page-wrapper">
+        <div class="form-page-card glass-card">
+            <div class="form-page-title">
+                <h1>Let's Start a Project</h1>
+                <p>Fill out the details below so I can better understand your ad creative needs.</p>
+            </div>
+
+            <form action="https://formsubmit.co/csdesignz07@gmail.com" method="POST" class="contact-form">
+                <input type="hidden" name="_next" value="http://localhost:8042/index.html">
+                <input type="hidden" name="_subject" value="New Inquiry from CS Chandan Website!">
+                <input type="text" name="_honey" style="display:none">
+
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="Client Name" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="Client Email" placeholder="john@company.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="work-type">Type of Project</label>
+                    <select id="work-type" name="Work Category" class="form-select" required>
+                        <option value="" disabled selected>Select a category...</option>
+                        <option value="Short Reels">Short Reel Edit</option>
+                        <option value="Long Videos">Long Video Edit</option>
+                        <option value="Cover Pages">Cover Page Design</option>
+                        <option value="Listing Images">Listing Image Design</option>
+                        <option value="Banners">Banner Design</option>
+                        <option value="Thumbnails">YouTube Thumbnails</option>
+                        <option value="Other">Other Design Work</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="budget">Budget Range</label>
+                    <select id="budget" name="Budget" class="form-select" required>
+                        <option value="" disabled selected>Select your budget...</option>
+                        <option value="Under ₹2,000">Under ₹2,000</option>
+                        <option value="₹2,000 - ₹5,000">₹2,000 - ₹5,000</option>
+                        <option value="₹5,000 - ₹10,000">₹5,000 - ₹10,000</option>
+                        <option value="₹10,000+">₹10,000+</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="deadline">Project Deadline</label>
+                    <input type="text" id="deadline" name="Deadline" placeholder="E.g., Next Week, End of Month, Flexible" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Project Details</label>
+                    <textarea id="message" name="Details" rows="5"
+                        placeholder="Tell me about your brand, goals, and what exact ad creatives you need..." required></textarea>
+                </div>
+                
+                <button type="submit" style="width: 100%; justify-content: center;" class="btn btn-primary form-submit">Send Project Details <i
+                        class="ph-fill ph-paper-plane-right"></i></button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
