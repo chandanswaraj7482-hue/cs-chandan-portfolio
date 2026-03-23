@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Chat Trigger -->
+    <div id="chat-trigger" title="Let's Talk!">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M12 2C6.477 2 2 6.477 2 12c0 1.821.487 3.53 1.338 5L2 22l5-1.338C8.47 21.513 10.179 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.477 0-2.887-.393-4.113-1.077l-.295-.165-2.61.696.696-2.61-.165-.295A7.957 7.957 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z" />
+        </svg>
+    </div>
+
+    <!-- Chat Window -->
+    <div id="chat-container">
+        <div class="chat-header">
+            <div class="bot-avatar">AI</div>
+            <div class="bot-info">
+                <h3>Creative Strategist</h3>
+                <div class="bot-status">Available for Hire</div>
+            </div>
+        </div>
+
+        <div id="chat-messages">
+            <!-- Messages will appear here -->
+        </div>
+
+        <div id="typing-indicator" class="typing-indicator" style="display: none;">
+            AI is strategizing...
+        </div>
+
+        <div class="chat-footer">
+            <input type="text" id="user-input" class="chat-input" placeholder="Type a message..." autocomplete="off">
+            <button id="send-btn" class="send-btn">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
