@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const sendBtn = document.getElementById('send-btn');
     const typingIndicator = document.getElementById('typing-indicator');
 
+    if(!chatContainer || !chatTrigger) return;
+
     // ✅ FIXED GOOGLE SCRIPT URL
     const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwNK8H328o6RgunndGR9yGOsx67tz0-7YWVeHz4cBAbQnJw8-4hxLBI9rR5vXBuWIoV/exec";
 
@@ -89,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (chatContainer.classList.contains('active')) {
             userInput.focus();
-            if (chatMessages.children.length === 0) {
+            if (chatMessages && chatMessages.children.length === 0) {
                 startFlow();
             }
         }
@@ -109,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const showTyping = (show) => {
-        typingIndicator.style.display = show ? 'block' : 'none';
+        if(typingIndicator) typingIndicator.style.display = show ? 'flex' : 'none';
     };
 
     const addBotMessage = (text, options = []) => {
@@ -183,7 +185,6 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch(GOOGLE_SCRIPT_URL, {
             method: "POST",
             headers: {
-                // Using text/plain is the best way to avoid CORS preflight (OPTIONS) 
                 "Content-Type": "text/plain;charset=utf-8"
             },
             body: JSON.stringify(data)
@@ -244,6 +245,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const handleSend = () => {
+        if(!userInput) return;
         const val = userInput.value.trim();
         if (!val) return;
 
@@ -252,10 +254,14 @@ document.addEventListener('DOMContentLoaded', () => {
         processInput(val);
     };
 
-    sendBtn.addEventListener('click', handleSend);
+    if(sendBtn) {
+        sendBtn.addEventListener('click', handleSend);
+    }
 
-    userInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') handleSend();
-    });
+    if(userInput) {
+        userInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') handleSend();
+        });
+    }
 
 });

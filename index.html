@@ -38,6 +38,12 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#" class="logo">CS<span class="text-accent">.</span></a>
+
+            <!-- Theme Toggle Button -->
+            <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle Dark/Light Mode" title="Toggle Mode">
+                <i class="ph ph-sun" id="themeIcon"></i>
+            </button>
+
             <div class="nav-links">
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
@@ -697,53 +703,45 @@
     <!-- Scripts -->
     <script src="script.js"></script>
 
-    <!-- previous Ai chat bot -->
-
-    <!-- <script>
-        (function () { if (!window.chatbase || window.chatbase("getState") !== "initialized") { window.chatbase = (...arguments) => { if (!window.chatbase.q) { window.chatbase.q = [] } window.chatbase.q.push(arguments) }; window.chatbase = new Proxy(window.chatbase, { get(target, prop) { if (prop === "q") { return target.q } return (...args) => target(prop, ...args) } }) } const onLoad = function () { const script = document.createElement("script"); script.src = "https://www.chatbase.co/embed.min.js"; script.id = "5WRmkjux4fKLVesr9ASc-"; script.domain = "www.chatbase.co"; document.body.appendChild(script) }; if (document.readyState === "complete") { onLoad() } else { window.addEventListener("load", onLoad) } })();
-    </script> -->
-
     <!-- CHATBOT START -->
-   <div id="chatbot-wrapper">
+    <div id="chatbot-wrapper">
+        <!-- Chat Trigger -->
+        <div id="chat-trigger" title="Let's Talk!">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M12 2C6.477 2 2 6.477 2 12c0 1.821.487 3.53 1.338 5L2 22l5-1.338C8.47 21.513 10.179 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.477 0-2.887-.393-4.113-1.077l-.295-.165-2.61.696.696-2.61-.165-.295A7.957 7.957 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z" />
+            </svg>
+        </div>
 
-    <!-- Chat Trigger -->
-    <div id="chat-trigger" title="Let's Talk!">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path
-                d="M12 2C6.477 2 2 6.477 2 12c0 1.821.487 3.53 1.338 5L2 22l5-1.338C8.47 21.513 10.179 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.477 0-2.887-.393-4.113-1.077l-.295-.165-2.61.696.696-2.61-.165-.295A7.957 7.957 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z" />
-        </svg>
-    </div>
+        <!-- Chat Window -->
+        <div id="chat-container">
+            <div class="chat-header">
+                <div class="bot-avatar">AI</div>
+                <div class="bot-info">
+                    <h3>Creative Strategist</h3>
+                    <div class="bot-status">Available for Hire</div>
+                </div>
+            </div>
 
-    <!-- Chat Window -->
-    <div id="chat-container">
-        <div class="chat-header">
-            <div class="bot-avatar">AI</div>
-            <div class="bot-info">
-                <h3>Creative Strategist</h3>
-                <div class="bot-status">Available for Hire</div>
+            <div id="chat-messages">
+                <!-- Messages will appear here -->
+            </div>
+
+            <div id="typing-indicator" class="typing-indicator" style="display: none;">
+                AI is strategizing...
+            </div>
+
+            <div class="chat-footer">
+                <input type="text" id="user-input" class="chat-input" placeholder="Type a message..."
+                    autocomplete="off">
+                <button id="send-btn" class="send-btn">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+                    </svg>
+                </button>
             </div>
         </div>
-
-        <div id="chat-messages">
-            <!-- Messages will appear here -->
-        </div>
-
-        <div id="typing-indicator" class="typing-indicator" style="display: none;">
-            AI is strategizing...
-        </div>
-
-        <div class="chat-footer">
-            <input type="text" id="user-input" class="chat-input" placeholder="Type a message..." autocomplete="off">
-            <button id="send-btn" class="send-btn">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
-                </svg>
-            </button>
-        </div>
     </div>
-
-
-
     <!-- CHATBOT END -->
 
     <script src="chatbot.js"></script>

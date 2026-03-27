@@ -2,6 +2,40 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    // --- Theme Toggle ---
+    const themeToggleBtn = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    
+    // Check saved theme or system preference
+    const savedTheme = localStorage.getItem('cs-portfolio-theme');
+    const systemPrefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+    
+    // Set initial theme
+    if (savedTheme === 'light' || (!savedTheme && systemPrefersLight)) {
+        document.documentElement.setAttribute('data-theme', 'light');
+        if(themeIcon) themeIcon.className = 'ph ph-moon';
+    } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        if(themeIcon) themeIcon.className = 'ph ph-sun';
+    }
+    
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            if (currentTheme === 'light' || (!currentTheme && systemPrefersLight)) {
+                // Switch to dark
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('cs-portfolio-theme', 'dark');
+                if(themeIcon) themeIcon.className = 'ph ph-sun';
+            } else {
+                // Switch to light
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('cs-portfolio-theme', 'light');
+                if(themeIcon) themeIcon.className = 'ph ph-moon';
+            }
+        });
+    }
+
     // --- Custom Cursor ---
     const cursorDot = document.querySelector('.cursor-dot');
     const cursorOutline = document.querySelector('.cursor-outline');
@@ -20,9 +54,10 @@ document.addEventListener('DOMContentLoaded', () => {
             mouseX = e.clientX;
             mouseY = e.clientY;
             
-            // Instantly move the dot
-            cursorDot.style.left = `${mouseX}px`;
-            cursorDot.style.top = `${mouseY}px`;
+            if(cursorDot) {
+                cursorDot.style.left = `${mouseX}px`;
+                cursorDot.style.top = `${mouseY}px`;
+            }
         });
         
         // Custom animation loop for the trailing outline and glow to make it ultra smooth
@@ -35,9 +70,10 @@ document.addEventListener('DOMContentLoaded', () => {
             glowX += (mouseX - glowX) * 0.05;
             glowY += (mouseY - glowY) * 0.05;
             
-            cursorOutline.style.left = `${outlineX}px`;
-            cursorOutline.style.top = `${outlineY}px`;
-            
+            if(cursorOutline){
+                cursorOutline.style.left = `${outlineX}px`;
+                cursorOutline.style.top = `${outlineY}px`;
+            }
             if (cursorGlow) {
                 cursorGlow.style.left = `${glowX}px`;
                 cursorGlow.style.top = `${glowY}px`;
@@ -52,10 +88,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Navbar Scroll Effect ---
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
+        if(navbar) {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
         }
     });
 
@@ -78,7 +116,9 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
-                mobileBtn.querySelector('i').classList.replace('ph-x', 'ph-list');
+                if(mobileBtn.querySelector('i')) {
+                    mobileBtn.querySelector('i').classList.replace('ph-x', 'ph-list');
+                }
             });
         });
     }
@@ -144,13 +184,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const sectionHeight = current.offsetHeight;
             const sectionTop = current.offsetTop - 100;
             const sectionId = current.getAttribute('id');
-            const navLink = document.querySelector(`.nav-links a[href*=${sectionId}]`);
+            const navLink = document.querySelector(`.nav-links a[href*="#${sectionId}"]`);
             
             if (navLink) {
                 if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    // removing active from all first might be needed
+                    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
                     navLink.classList.add('active');
-                } else {
-                    navLink.classList.remove('active');
                 }
             }
         });
@@ -164,13 +204,6 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.innerHTML = '<i class="ph ph-spinner ph-spin"></i> Redirecting...';
             // Allow native form submission to FormSubmit.co
         });
-    }
-
-    // --- Testimonial Interaction for Scroll/Touch ---
-    const testimonialGrid = document.getElementById('testimonialStack');
-    if (testimonialGrid) {
-        // Javascript expand logic removed in favor of pure CSS :hover
-        // Mobile users will see the stacked linear mobile list layout
     }
 
     // --- Typing Auto-Text Effect ---
@@ -206,7 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    if (textArray.length && typedTextSpan) {
+    if (textArray && textArray.length && typedTextSpan) {
         setTimeout(type, newTextDelay + 250);
     }
 });
