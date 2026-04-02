@@ -81,8 +81,25 @@ document.addEventListener('DOMContentLoaded', () => {
             
             requestAnimationFrame(animateCursor);
         };
-        
         animateCursor();
+
+        // Enlarge cursor on hover
+        document.querySelectorAll('a, button, .portfolio-item, .filter-btn').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                if(cursorOutline) {
+                    cursorOutline.style.transform = 'translate(-50%, -50%) scale(1.8)';
+                    cursorOutline.style.borderColor = 'var(--accent-color)';
+                    cursorOutline.style.background = 'rgba(255, 0, 51, 0.1)';
+                }
+            });
+            el.addEventListener('mouseleave', () => {
+                if(cursorOutline) {
+                    cursorOutline.style.transform = 'translate(-50%, -50%) scale(1)';
+                    cursorOutline.style.borderColor = 'var(--text-main)';
+                    cursorOutline.style.background = 'transparent';
+                }
+            });
+        });
     }
 
     // --- Navbar Scroll Effect ---
@@ -172,6 +189,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         });
+    });
+
+    // Trigger 'All Works' on initial load to ensure proper grid display
+    const allWorksBtn = document.querySelector('.filter-btn[data-filter="all"]');
+    portfolioItems.forEach(item => {
+        item.style.display = 'block';
+        item.style.opacity = '1';
+        item.style.transform = 'scale(1)';
     });
 
     // --- Active Nav Link on Scroll ---

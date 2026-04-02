@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if(!chatContainer || !chatTrigger) return;
 
-    // ✅ FIXED GOOGLE SCRIPT URL
-    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwNK8H328o6RgunndGR9yGOsx67tz0-7YWVeHz4cBAbQnJw8-4hxLBI9rR5vXBuWIoV/exec";
+    // ✅ UPDATED GOOGLE SCRIPT URL
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx6CLfMlZHO3RofI_k99XZJzXgCgvXNJ8UA7jiUj2_6RBFBMzBAwZzZA0DDCA6sILH7/exec";
 
     let currentStep = 0;
     let inactivityTimer;
@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const userData = {
         name: '',
+        whatsapp: '',
         service: '',
         customService: '',
         goal: '',
@@ -26,18 +27,27 @@ document.addEventListener('DOMContentLoaded', () => {
         platform: '',
         deadline: '',
         projectDetails: '',
-        reference: '',
-        contact: ''
+        reference: ''
     };
 
+    // ✅ REORDERED FLOW: Name & WhatsApp first
     const flow = [
         {
-            question: "Hey 👋\nWant better results from your content or brand? 🚀\n\nTell me what you need 👇",
+            question: "Hey 👋 Welcome!\n\nBefore we start, what's your name?",
+            field: "name"
+        },
+        {
+            question: "Nice to meet you! 🙌\n\nWhat's your WhatsApp number or email?\nI'll reach out with strategy + pricing 🔥",
+            field: "whatsapp"
+        },
+        {
+            question: "Awesome! Now tell me what you need 👇",
             options: [
                 "YouTube Thumbnails 🚀",
                 "Instagram Posts / Ads 🔥",
-                "Logo Design 🎯",
-                "Branding Package 💼",
+                "Logo / Branding 🎯",
+                "Print & Packaging 📦",
+                "Video Editing 🎬",
                 "Other"
             ],
             field: "service"
@@ -48,18 +58,18 @@ document.addEventListener('DOMContentLoaded', () => {
             condition: (data) => data.service === "Other"
         },
         {
-            question: "What’s your main goal?",
-            options: ["More views", "More sales", "Better branding"],
+            question: "What's your main goal?",
+            options: ["More views", "More sales", "Better branding", "Launch a product"],
             field: "goal"
         },
         {
-            question: "What’s your budget?",
-            options: ["₹500–₹2000", "₹2000–₹5000", "₹5000+"],
+            question: "What's your budget?",
+            options: ["₹500–₹2000", "₹2000–₹5000", "₹5000+", "Let's discuss"],
             field: "budget"
         },
         {
             question: "Where will this design be used?",
-            options: ["YouTube", "Instagram", "Ads", "Website", "Other"],
+            options: ["YouTube", "Instagram", "Facebook Ads", "Website", "Amazon/Flipkart", "Other"],
             field: "platform"
         },
         {
@@ -74,14 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             question: "Do you have any reference? Paste link 👇 (Drive / Pinterest / Instagram)",
             field: "reference"
-        },
-        {
-            question: "What’s your name?",
-            field: "name"
-        },
-        {
-            question: "Share your WhatsApp or email 👇\nI’ll contact you with strategy + pricing 🔥",
-            field: "contact"
         }
     ];
 
@@ -92,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (chatContainer.classList.contains('active')) {
             userInput.focus();
             if (chatMessages && chatMessages.children.length === 0) {
-                startFlow();
+                showPrivacyAndStart();
             }
         }
 
@@ -104,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
         clearTimeout(inactivityTimer);
         if (!inactivityTriggered && currentStep < flow.length) {
             inactivityTimer = setTimeout(() => {
-                addBotMessage("Hey 👀 Still there? Let’s get you better results 🚀");
+                addBotMessage("Hey 👀 Still there? Let's get you better results 🚀");
                 inactivityTriggered = true;
             }, 7000);
         }
@@ -157,6 +159,27 @@ document.addEventListener('DOMContentLoaded', () => {
         chatMessages.scrollTop = chatMessages.scrollHeight;
     };
 
+    // ✅ Show privacy text first, then start flow
+    const showPrivacyAndStart = () => {
+        // Privacy disclaimer
+        showTyping(true);
+        setTimeout(() => {
+            showTyping(false);
+            const privacyMsg = document.createElement('div');
+            privacyMsg.className = 'message bot-message privacy-notice';
+            privacyMsg.innerHTML = '🔒 <em>By chatting, you agree that your details may be saved for communication purposes.</em>';
+            privacyMsg.style.fontSize = '12px';
+            privacyMsg.style.opacity = '0.75';
+            privacyMsg.style.borderLeft = '3px solid var(--cb-accent-red)';
+            chatMessages.appendChild(privacyMsg);
+
+            // Start the actual flow after a short delay
+            setTimeout(() => {
+                startFlow();
+            }, 400);
+        }, 300);
+    };
+
     const startFlow = () => {
         const step = flow[currentStep];
 
@@ -171,14 +194,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const validateContact = (input) => {
         const email = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        const phone = /^\+?\d{10,15}$/;
+        const phone = /^[\+]?\d{10,15}$/;
 
-        if (["1111111111", "1234567890", "0000000000"].includes(input)) return false;
+        if (["1111111111", "1234567890", "0000000000"].includes(input.replace(/\D/g, ''))) return false;
 
-        return email.test(input) || phone.test(input);
+        return email.test(input) || phone.test(input.replace(/[\s\-]/g, ''));
     };
 
-    // ✅ FIXED GOOGLE SHEET SEND
+    // ✅ GOOGLE SHEET SEND
     const sendToGoogleSheets = (data) => {
         console.log("Sending:", data);
 
@@ -207,26 +230,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const step = flow[currentStep];
 
-        if (step.field === "contact") {
-
+        // Validate WhatsApp/email at step 2 (index 1)
+        if (step.field === "whatsapp") {
             if (!validateContact(input)) {
-                addBotMessage("Please enter valid WhatsApp or email 👍");
+                addBotMessage("Please enter a valid WhatsApp number or email 👍");
                 return;
             }
+        }
 
-            userData.contact = input;
-            addUserMessage(input);
+        userData[step.field] = input;
+        currentStep++;
 
+        // Check if last step (reference) — submit data
+        if (currentStep >= flow.length) {
             // FINAL MESSAGE
-            addBotMessage("Perfect 👍\n\nI’ve got your details.\n\nI’ll review your requirement and message you with:\n• Best design direction\n• Strategy\n• Pricing\n\nLet’s build something that actually converts 🚀");
+            addBotMessage(`Perfect ${userData.name} 👍\n\nI've got your details.\n\nI'll review your requirement and message you with:\n• Best design direction\n• Strategy\n• Pricing\n\nLet's build something that actually converts 🚀`);
 
             // SEND DATA
             sendToGoogleSheets({
                 name: userData.name,
-                whatsapp: userData.contact,
+                whatsapp: userData.whatsapp,
                 goal: userData.goal,
                 budget: userData.budget,
-                message: `${userData.service} | ${userData.projectDetails}`,
+                message: `${userData.service}${userData.customService ? ' - ' + userData.customService : ''} | ${userData.projectDetails}`,
                 platform: userData.platform,
                 deadline: userData.deadline,
                 reference: userData.reference
@@ -236,12 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        userData[step.field] = input;
-        currentStep++;
-
-        if (currentStep < flow.length) {
-            startFlow();
-        }
+        startFlow();
     };
 
     const handleSend = () => {
