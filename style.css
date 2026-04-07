@@ -31,7 +31,7 @@
   --font-heading: 'Space Grotesk', sans-serif;
 
   /* Spacing and Radius */
-  --section-padding: 140px 0;
+  --section-padding: 80px 0;
   --radius-sm: 16px;
   --radius-md: 28px;
   --radius-lg: 40px;
@@ -665,7 +665,7 @@ body:has(a:hover, button:hover) .cursor-outline {
 
 /* Brands Section */
 .brands {
-  padding: 80px 0;
+  padding: 60px 0;
   background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
   border-bottom: 1px solid var(--border-color);
 }
@@ -815,7 +815,7 @@ body:has(a:hover, button:hover) .cursor-outline {
 
 /* Skills Section */
 .skills {
-  padding: 100px 0;
+  padding: 80px 0;
   background: var(--bg-primary);
   border-top: 1px solid var(--border-color);
 }
@@ -1151,7 +1151,7 @@ body:has(a:hover, button:hover) .cursor-outline {
 
 /* Portfolio Section */
 .portfolio {
-  padding: 60px 0 var(--section-padding) 0;
+  padding: 80px 0;
   background: var(--bg-secondary);
 }
 
@@ -1196,20 +1196,34 @@ body:has(a:hover, button:hover) .cursor-outline {
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--bg-card); /* Ensure uniform background */
 }
 
 .portfolio-item:hover {
-  transform: translateY(-8px) scale(1.02);
+  transform: translateY(-8px) scale(1.01);
   border-color: var(--accent-color);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 0 0 25px var(--accent-glow);
 }
 
 .portfolio-img-container {
   width: 100%;
-  aspect-ratio: 1/1; /* Updated to 1:1 for square mockups */
+  /* aspect-ratio removed to show natural image size */
   overflow: hidden;
   position: relative;
   background: #111;
+  flex-shrink: 0;
+}
+
+.portfolio-item[data-cat="thumbnails"] .portfolio-img-container {
+  aspect-ratio: 16 / 9; /* Standard YouTube thumbnail size */
+}
+
+.portfolio-item[data-cat="thumbnails"] .portfolio-img {
+  height: 100%; /* Fill container height */
+  object-fit: contain; /* Ensure the entire original design is visible without any cropping */
 }
 
 .portfolio-item.video-short .portfolio-img-container {
@@ -1224,17 +1238,21 @@ body:has(a:hover, button:hover) .cursor-outline {
 
 .portfolio-img {
   width: 100%;
-  height: 100%;
+  height: auto; /* Allow the image to dictate its original proportions */
+  display: block; /* Prevent baseline spacing issue */
   object-fit: cover;
   transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .portfolio-item:hover .portfolio-img {
-  transform: scale(1.08);
+  transform: scale(1.05); /* slightly reduced max scale for cleaner look */
 }
 
 .portfolio-content {
   padding: 30px;
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Pushes button to bottom if height is fixed */
 }
 
 .portfolio-content h3 {
@@ -1243,8 +1261,35 @@ body:has(a:hover, button:hover) .cursor-outline {
   margin-bottom: 12px;
 }
 
+.live-project-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.3); /* dark transparent pill */
+  color: var(--accent-color);
+  padding: 12px 24px;
+  border-radius: 50px; /* heavily rounded pill shape */
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin-top: auto; /* Push to the very bottom */
+  transition: all 0.3s ease;
+  width: 100%; /* Make it stretch wide */
+  border: 1px solid var(--accent-color); /* glowing red border */
+}
+
+.live-project-btn:hover {
+  background: var(--accent-color);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px var(--accent-glow);
+}
+
 .case-study {
   margin-top: 15px;
+  margin-bottom: 25px; /* Ensures space above the button */
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -1273,7 +1318,7 @@ body:has(a:hover, button:hover) .cursor-outline {
 
 /* Testimonials */
 .testimonials {
-  padding: 120px 0 20px 0;
+  padding: 80px 0;
   background: var(--bg-primary);
   overflow: hidden;
 }
@@ -1423,7 +1468,7 @@ body:has(a:hover, button:hover) .cursor-outline {
 
 /* Contact Section */
 .contact {
-  padding: 40px 0 140px 0;
+  padding: 80px 0;
   background: var(--bg-primary);
 }
 
@@ -1896,7 +1941,7 @@ body:has(a:hover, button:hover) .cursor-outline {
   }
 
   :root {
-    --section-padding: 60px 0;
+    --section-padding: 50px 0;
   }
 
   .container {
